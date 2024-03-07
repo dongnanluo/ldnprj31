@@ -13,6 +13,7 @@ debug=true
 [dev.build.parameters]
 cached = true
 parallel = true
+debug=true
 
 [dev.package.parameters]
 force_upload = true
@@ -26,6 +27,7 @@ capabilities = "CAPABILITY_IAM"
 confirm_changeset = false
 force_upload = true
 fail_on_empty_changeset = false
+debug=true
 
 [dev.sync.parameters]
 watch = true
