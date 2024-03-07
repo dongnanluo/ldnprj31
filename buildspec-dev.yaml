@@ -1,0 +1,54 @@
+version: 0.2
+
+env:  
+  variables:  
+    SAM_CLI_TELEMETRY: "0" 
+    #STACK_NAME: "ldnprj3-dev"
+
+phases:  
+  install:  
+    #runtime-versions:  
+    #  python: 3.10
+    commands:  
+      #- yum install -y python3.10
+      - python3 --version
+      - echo "install python vnen..."
+      - python3 -m venv .venv
+      - echo "update pip..."
+      #- echo "source venv..."
+      #- source .venv/bin/activate
+      - .venv/bin/python3 -m pip install --upgrade pip
+      - echo "install lib..."
+      - .venv/bin/pip install -r hello_world/requirements.txt
+ 
+  pre_build:  
+    commands:  
+      - echo "SAM_CLI_TELEMETRY is set to $SAM_CLI_TELEMETRY"  
+      - echo "Pre-build dev steps..."
+
+  build:  
+    commands:  
+      - echo "sam build dev..." 
+      - sam build --config-env dev --debug #-template-file template-dev.yaml --use-container
+      #- sam build 
+      - echo "sam deploy dev steps..."
+      #- sam package --template-file template.yaml --output-template-file packaged.yaml --output-template-file packaged.yaml
+      - sam deploy --config-env dev --debug --no-confirm-changeset --no-fail-on-empty-changeset
+      #- echo "sam package"
+      #- sam package --config-env dev --debug
+      #--template-file template.yaml \ 
+      #- sam deploy --stack-name ldnprj --capabilities CAPABILITY_IAM --no-confirm-changeset --force-upload
+      #- sam deploy --no-confirm-changeset --no-fail-on-empty-changeset   --stack-name ldnprj3-dev
+      #- sam deploy #--debug --force-upload --no-confirm-changeset --no-fail-on-empty-changeset  #--config-env dev 
+      #- sam package --template-file template.yaml --output-template-file packaged.yaml --output-template-file packaged.yaml
+
+  post_build:  
+    commands:   
+      - echo "post_build dev..." 
+      #- echo "sam deploy dev steps..."
+      #- sam deploy --config-env dev --debug --no-confirm-changeset --no-fail-on-empty-changeset
+  
+#artifacts:  
+#  files:  
+#    - packaged.yaml
+    
