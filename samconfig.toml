@@ -76,7 +76,7 @@ confirm_changeset = false
 force_upload = true
 debug=true
 fail_on_empty_changeset = false
-template_file = ".aws-sam/build/template-dev.yaml"
+#template_file = ".aws-sam/build/template-dev.yaml"
 
 [default.package.parameters]
 #resolve_s3 = true
