@@ -4,20 +4,13 @@ version = 0.1
 
 [dev]
 [dev.global.parameters]
-region="us-east-1"
-s3_bucket = "mingzhoubucket"
 stack_name = "ldnprj31-dev"
-template_file = "template-dev.yaml"
-debug=true
+s3_bucket = "mingzhoubucket"
 
 [dev.build.parameters]
 cached = true
 parallel = true
 debug=true
-
-[dev.package.parameters]
-force_upload = true
-output_template_file = "packaged.yaml"
 
 [dev.validate.parameters]
 lint = true
@@ -25,18 +18,9 @@ lint = true
 [dev.deploy.parameters]
 capabilities = "CAPABILITY_IAM"
 confirm_changeset = false
+debug = true
 force_upload = true
 fail_on_empty_changeset = false
-debug=true
-
-[dev.sync.parameters]
-watch = true
-
-[dev.local_start_api.parameters]
-warm_containers = "EAGER"
-
-[dev.local_start_lambda.parameters]
-warm_containers = "EAGER"
 
 #============================================
 
