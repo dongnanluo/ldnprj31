@@ -6,7 +6,7 @@ version = 0.1
 [dev.global.parameters]
 stack_name = "ldnprj31-dev"
 s3_bucket = "mingzhoubucket"
-template_file = "template-dev.yaml"
+template_file = "template.yaml"
 
 [dev.build.parameters]
 cached = true
