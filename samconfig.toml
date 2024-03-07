@@ -8,24 +8,23 @@ region="us-east-1"
 s3_bucket = "mingzhoubucket"
 stack_name = "ldnprj31-dev"
 template_file = "template-dev.yaml"
-debug=false
+debug=true
 
 [dev.build.parameters]
 cached = true
 parallel = true
-#skip_pull_image=true
-use_container=false
 
 [dev.package.parameters]
 force_upload = true
 output_template_file = "packaged.yaml"
 
+[dev.validate.parameters]
+lint = true
+
 [dev.deploy.parameters]
-capabilities="CAPABILITY_IAM"
-#s3_prefix = "ldnprj31-dev"
-disable_rollback = true
-force_upload = true
+capabilities = "CAPABILITY_IAM"
 confirm_changeset = false
+force_upload = true
 fail_on_empty_changeset = false
 
 [dev.sync.parameters]
