@@ -83,6 +83,7 @@ fail_on_empty_changeset = false
 [default]
 [default.global.parameters]
 stack_name = "ldnprj31"
+s3_bucket = "mingzhoubucket"
 
 [default.build.parameters]
 cached = true
