@@ -88,6 +88,7 @@ s3_bucket = "mingzhoubucket"
 [default.build.parameters]
 cached = true
 parallel = true
+debug=true
 
 [default.validate.parameters]
 lint = true
@@ -95,7 +96,9 @@ lint = true
 [default.deploy.parameters]
 capabilities = "CAPABILITY_IAM"
 confirm_changeset = true
-#resolve_s3 = true
+debug = true
+force_upload = true
+fail_on_empty_changeset = false
 
 [default.package.parameters]
 #resolve_s3 = true
