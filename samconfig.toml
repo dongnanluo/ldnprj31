@@ -5,7 +5,7 @@ version = 0.1
 [dev]
 [dev.global.parameters]
 stack_name = "ldnprj31-dev"
-#template_file = "template.yaml"
+#template_file = "template-dev.yaml"
 
 [dev.build.parameters]
 region="us-east-1"
