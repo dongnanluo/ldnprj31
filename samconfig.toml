@@ -25,8 +25,8 @@ capabilities="CAPABILITY_IAM"
 #s3_prefix = "ldnprj31-dev"
 disable_rollback = true
 force_upload = true
-#confirm_changeset = false
-#fail_on_empty_changeset = false
+confirm_changeset = false
+fail_on_empty_changeset = false
 
 [dev.sync.parameters]
 watch = true

@@ -26,14 +26,14 @@ phases:
       - echo "SAM_CLI_TELEMETRY is set to $SAM_CLI_TELEMETRY"  
       - echo "Pre-build dev steps..."
 
-  build:  
+  build: 
     commands:  
       - echo "sam build dev..." 
-      - sam build --config-env dev --debug #-template-file template-dev.yaml --use-container
+      - sam build --config-env dev #--debug -template-file template-dev.yaml --use-container
       #- sam build 
       - echo "sam deploy dev steps..."
       #- sam package --template-file template.yaml --output-template-file packaged.yaml --output-template-file packaged.yaml
-      - sam deploy --config-env dev --debug --no-confirm-changeset --no-fail-on-empty-changeset
+      - sam deploy --config-env dev #--debug --no-confirm-changeset --no-fail-on-empty-changeset
       #- echo "sam package"
       #- sam package --config-env dev --debug
       #--template-file template.yaml \ 
